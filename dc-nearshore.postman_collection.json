@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "e278c3b7-d95d-4d8a-95a4-b504381e0292",
+		"name": "dc-nearshore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23585949"
+	},
+	"item": [
+		{
+			"name": "Device",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/dcnearshore/v1/devices",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dcnearshore",
+								"v1",
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/dcnearshore/v1/devices/4b2a7e9b-ed7d-4902-ba94-2a25c4c16833",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dcnearshore",
+								"v1",
+								"devices",
+								"4b2a7e9b-ed7d-4902-ba94-2a25c4c16833"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Device",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"device_name\": \"testing_for_update\",\r\n    \"firmwares\": [\r\n        {\r\n            \"firmware_name\": \"testing_firmware\",\r\n            \"release_notes\": \"release_notes_test\",\r\n            \"release_date\": \"2023-10-07\",\r\n            \"url\": \"www.google.com\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/dcnearshore/v1/devices",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dcnearshore",
+								"v1",
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"device_name\": \"testing_update\",\r\n    \"firmwares\": [\r\n        {\r\n            \"firmware_id\" : \"783af579-7418-438d-a388-6a3a03b1b89a\",\r\n            \"firmware_name\": \"Que se jodan todoooos\",\r\n            \"release_notes\": \"update\",\r\n            \"release_date\": \"2023-10-07\",\r\n            \"url\": \"www.python.com\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/dcnearshore/v1/devices/8e98d7d6-1090-4b90-b8af-2ff476d5b200",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dcnearshore",
+								"v1",
+								"devices",
+								"8e98d7d6-1090-4b90-b8af-2ff476d5b200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/dcnearshore/v1/devices/72b1a511-9e67-435b-9ccf-15b190b7f5b0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dcnearshore",
+								"v1",
+								"devices",
+								"72b1a511-9e67-435b-9ccf-15b190b7f5b0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Firmware",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/dcnearshore/v1/firmwares",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dcnearshore",
+								"v1",
+								"firmwares"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/dcnearshore/v1/firmwares/b60abbd6-9330-4dc5-8470-51f81e5b5da3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dcnearshore",
+								"v1",
+								"firmwares",
+								"b60abbd6-9330-4dc5-8470-51f81e5b5da3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Device",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firmware_name\": \"test_\",\r\n    \"device_id\" : \"4b2a7e9b-ed7d-4902-ba94-2a25c4c16833\",\r\n    \"release_notes\": \"release_notes_test\",\r\n    \"release_date\": \"2023-10-07\",\r\n    \"url\": \"www.google.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/dcnearshore/v1/firmwares",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dcnearshore",
+								"v1",
+								"firmwares"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firmware_name\": \"test_update_2\",\r\n    \"device_id\": \"4b2a7e9b-ed7d-4902-ba94-2a25c4c16833\",\r\n    \"release_notes\": \"release with python test comment\",\r\n    \"release_date\": \"2023-10-08\",\r\n    \"url\": \"www.python.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/dcnearshore/v1/firmwares/b60abbd6-9330-4dc5-8470-51f81e5b5da3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dcnearshore",
+								"v1",
+								"firmwares",
+								"b60abbd6-9330-4dc5-8470-51f81e5b5da3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/dcnearshore/v1/firmwares/2faaefba-1b23-4b13-ad0e-aa869a5fe00b",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dcnearshore",
+								"v1",
+								"firmwares",
+								"2faaefba-1b23-4b13-ad0e-aa869a5fe00b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{ns}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "dc",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "ns",
+			"value": "dc-nearshore29",
+			"type": "string"
+		}
+	]
+}
