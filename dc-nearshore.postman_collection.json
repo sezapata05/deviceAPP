@@ -55,7 +55,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"device_name\": \"testing_for_update\",\r\n    \"firmwares\": [\r\n        {\r\n            \"firmware_name\": \"testing_firmware\",\r\n            \"release_notes\": \"release_notes_test\",\r\n            \"release_date\": \"2023-10-07\",\r\n            \"url\": \"www.google.com\"\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"device_name\": \"create new device\",\r\n    \"firmwares\": [\r\n        {\r\n            \"firmware_name\": \"new firmware\",\r\n            \"release_notes\": \"some release notes\",\r\n            \"release_date\": \"2023-10-07\",\r\n            \"url\": \"www.google.com\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -83,7 +83,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"device_name\": \"testing_update\",\r\n    \"firmwares\": [\r\n        {\r\n            \"firmware_id\" : \"783af579-7418-438d-a388-6a3a03b1b89a\",\r\n            \"firmware_name\": \"Que se jodan todoooos\",\r\n            \"release_notes\": \"update\",\r\n            \"release_date\": \"2023-10-07\",\r\n            \"url\": \"www.python.com\"\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"device_name\": \"device for update\",\r\n    \"firmwares\": [\r\n        {\r\n            \"firmware_id\" : \"783af579-7418-438d-a388-6a3a03b1b89a\",\r\n            \"firmware_name\": \"firmware test for update\",\r\n            \"release_notes\": \"update\",\r\n            \"release_date\": \"2023-10-07\",\r\n            \"url\": \"www.python.com\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -170,13 +170,13 @@
 					"response": []
 				},
 				{
-					"name": "Create Device",
+					"name": "Create Firmware",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firmware_name\": \"test_\",\r\n    \"device_id\" : \"4b2a7e9b-ed7d-4902-ba94-2a25c4c16833\",\r\n    \"release_notes\": \"release_notes_test\",\r\n    \"release_date\": \"2023-10-07\",\r\n    \"url\": \"www.google.com\"\r\n}",
+							"raw": "{\r\n    \"firmware_name\": \"create new firmware\",\r\n    \"device_id\" : \"4b2a7e9b-ed7d-4902-ba94-2a25c4c16833\",\r\n    \"release_notes\": \"some release notes \",\r\n    \"release_date\": \"2023-10-07\",\r\n    \"url\": \"www.google.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
