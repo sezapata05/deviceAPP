@@ -2,8 +2,9 @@ package utilsservices
 
 import (
 	modelpackage "dc-nearshore/cmd/pkg/models"
-	"fmt"
 	"time"
+
+	"github.com/rs/zerolog/log"
 )
 
 func FormatResponse(status_code int, status bool, message string, results interface{}) modelpackage.ResponseModel {
@@ -25,8 +26,7 @@ func GenerateMapsFromBody(bodyReq modelpackage.DeviceBody) []modelpackage.Firmwa
 
 		releaseDate, err := time.Parse("2006-01-02", firmware.ReleaseDate)
 		if err != nil {
-			// Maneja el error aquí, por ejemplo, regresando un arreglo vacío o generando un log
-			fmt.Println(err)
+			log.Print(err)
 			return firmwares
 		}
 

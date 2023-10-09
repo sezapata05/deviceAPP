@@ -13,8 +13,6 @@ import (
 
 func SetUp(d *DataSource) (*gin.Engine, error) {
 
-	// fmt.Println("Starting data source")
-
 	/*
 	* repository layer
 	 */

@@ -7,12 +7,14 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-// Define un mapa para almacenar usuarios y contraseñas encriptadas.
+/* Defines a map for storing encrypted users and passwords. "Hard coded" information for test only,
+* for prod we recommend database storage.
+ */
 var users = map[string]string{
 	"dc": "$2a$10$jXRtMagkTkC3lxO3ynj.FeEXxtirLMvlbsl1947WSDr5A4OislB2a",
 }
 
-// Middleware de autenticación básica con bcrypt
+// Basic authentication middleware with bcrypt
 func BasicAuthMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 

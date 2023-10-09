@@ -18,6 +18,9 @@ type DataSource struct {
 }
 
 func generateMigration(db *gorm.DB) error {
+
+	log.Print("Starting migration . . .")
+
 	err := db.AutoMigrate(&modelpackage.DeviceModel{}, &modelpackage.FirmwareModel{})
 	if err != nil {
 		return err
@@ -41,8 +44,8 @@ func InitDS() (*DataSource, error) {
 		db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{
 			Logger: logger.Default.LogMode(logger.Info),
 			NamingStrategy: schema.NamingStrategy{
-				TablePrefix:   "public", // Prefijo de tabla (opcional)
-				SingularTable: true,     // Usa el nombre de la estructura en singular
+				TablePrefix:   "public",
+				SingularTable: true,
 			},
 			CreateBatchSize: 100,
 		})
@@ -51,7 +54,7 @@ func InitDS() (*DataSource, error) {
 			break
 		}
 
-		log.Printf("Error al conectar a la base de datos (intentos restantes: %d): %v\n", maxRetries-i-1, err)
+		log.Printf("Error connecting to the database (remaining attempts): %d): %v\n", maxRetries-i-1, err)
 		time.Sleep(retryInterval)
 	}
 

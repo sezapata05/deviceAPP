@@ -50,29 +50,5 @@ func main() {
 	// Shutdown server
 	if err := srv.Shutdown(ctx); err != nil {
 		log.Printf("Server forced to shutdown: %v", err)
-
 	}
 }
-
-// package main
-
-// import (
-// 	"fmt"
-
-// 	"golang.org/x/crypto/bcrypt"
-// )
-
-// func main() {
-// 	password := "dc-nearshore29"
-
-// 	// Genera un hash bcrypt para la contraseña
-// 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
-// 	if err != nil {
-// 		fmt.Println("Error al generar el hash:", err)
-// 		return
-// 	}
-
-// 	// Imprime el hash generado
-// 	fmt.Println("Contraseña 'dc-nearshore29' convertida a hash bcrypt:")
-// 	fmt.Println(string(hashedPassword))
-// }
