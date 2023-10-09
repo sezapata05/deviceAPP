@@ -1,8 +1,8 @@
 # Enpoints Api Devices
 
-
-
 ## Endpoints
+
+All the endpoints in the list below have middleware to validate that the user is authenticated against the server. The mapping and setting of the middleware is done in the file `cmd\pkg\routes\route.handler.go`
 
 Below are the available endpoints in the application.
 
