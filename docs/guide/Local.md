@@ -2,7 +2,7 @@
 
 In case you do not have postgresql installed/configured I recommend you to look at the option of executing through containers.
 
-[Docker Execution](docs/guide/Docker.md)
+[Docker Execution](Docker.md)
 
 To run locally you need to set the following variables in the `.env` file
 
@@ -22,8 +22,11 @@ To run it on your premises, you must follow the following command lines.
 # Install the dependencies:
 go get ./...
 
-# run
+# run on windows
 go run .\cmd\api\main.go
+
+# run on Mac
+go run ./cmd/api/main.go
 ```
 
 
