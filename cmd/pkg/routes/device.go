@@ -2,7 +2,9 @@ package routehandlerpackage
 
 import (
 	modelpackage "dc-nearshore/cmd/pkg/models"
+	validationspackage "dc-nearshore/cmd/pkg/models/validations"
 	utilsservices "dc-nearshore/cmd/pkg/utils"
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -14,6 +16,14 @@ func (h *Handler) PostDeviceController(c *gin.Context) {
 
 	if err := c.ShouldBindJSON(&body); err != nil {
 		response := utilsservices.FormatResponse(http.StatusBadRequest, false, "json has not been sent or with problems", []string{})
+		c.JSON(response.Status_code, response)
+		return
+	}
+
+	if err := validate.Struct(body); err != nil {
+		out := validationspackage.ValidationError(err, ve)
+		response := utilsservices.FormatResponse(http.StatusBadRequest, false,
+			fmt.Sprintf("some error in struct - body: %v", out), []string{})
 		c.JSON(response.Status_code, response)
 		return
 	}
@@ -47,6 +57,14 @@ func (h *Handler) PutDeviceController(c *gin.Context) {
 
 	if err := c.ShouldBindJSON(&body); err != nil {
 		response := utilsservices.FormatResponse(http.StatusBadRequest, false, "json has not been sent or with problems", []string{})
+		c.JSON(response.Status_code, response)
+		return
+	}
+
+	if err := validate.Struct(body); err != nil {
+		out := validationspackage.ValidationError(err, ve)
+		response := utilsservices.FormatResponse(http.StatusBadRequest, false,
+			fmt.Sprintf("some error in struct - body: %v", out), []string{})
 		c.JSON(response.Status_code, response)
 		return
 	}

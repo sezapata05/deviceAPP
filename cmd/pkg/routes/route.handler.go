@@ -5,8 +5,13 @@ import (
 
 	"github.com/gin-gonic/gin"
 
+	"github.com/go-playground/validator/v10"
+
 	middleware "dc-nearshore/cmd/pkg/middleware"
 )
+
+var validate = validator.New()
+var ve validator.ValidationErrors
 
 type Handler struct {
 	DeviceService   interfacepackage.DeviceService
